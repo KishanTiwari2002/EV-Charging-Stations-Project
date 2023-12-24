@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EV Charger Prediction</title>
+</head>
+<body>
+    <h2>EV Charger Prediction</h2>
+    <form action="/predict" method="post">
+        <label for="Circle">Circle:</label>
+        <input type="number" name="Circle" required><br><br>
+        
+        <label for="CatCode">Category Code:</label>
+        <input type="number" name="CatCode" required><br><br>
+        
+        <label for="TotServices">Total Services:</label>
+        <input type="number" name="TotServices" required><br><br>
+        
+        <label for="BilledServices">Billed Services:</label>
+        <input type="number" name="BilledServices" required><br><br>
+        
+        <input type="submit" value="predict">
+    </form>
+
+    {% if loads is defined and units is defined %}
+    <h3>Prediction Results</h3>
+    <p>Predicted Load: {{ loads }}</p>
+    <p>Predicted Units: {{ units }}</p>
+    {% endif %}
+</body>
+</html>
